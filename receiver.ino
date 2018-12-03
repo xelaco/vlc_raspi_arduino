@@ -1,5 +1,5 @@
 /* xelaco 2018
- * Visible light communication between Raspberry Pi and Arduino
+ * Visible light communication between a Raspberry Pi and an Arduino
  * receiver.ino
  * 
  * ___Requirements for the receiver___
