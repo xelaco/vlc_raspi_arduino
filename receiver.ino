@@ -7,13 +7,13 @@
  * > Same LED as sender
  * > Wires
  * > 1 Mohm resistor
- * > LCD circuit (optional) --> LCD 16x2, 10 Kohm potentiometer, 220 ohm resistor, wires, breadboard
+ * > LCD circuit --> LCD 16x2, 10 Kohm potentiometer, 220 ohm resistor, wires, breadboard
  * > This program must be uploaded to an Arduino.
  * 
  * ___Circuit___
  * LED: (+) to pin A0 /// (-) to ground
- * resistor : in parallel with the LED
- * LCD circuit (optional): see Arduino official documentation
+ * Resistor : in parallel with the LED
+ * LCD circuit: see Arduino official documentation
  */
 
 #include <LiquidCrystal.h>
