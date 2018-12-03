@@ -18,7 +18,6 @@
 
 #include <LiquidCrystal.h>
 #define RECEIVER A0
-#define BOTTOM_TEXT ":-) :-D :O (^_-)" /* Bottom line of the lcd is not used, you can write what you want.*/
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
@@ -28,10 +27,8 @@ int count = 0;
 
 void setup()
 {
-  Serial.begin(9600);
   lcd.begin(16, 2);
-  lcd.setCursor(0, 1);
-  lcd.print(BOTTOM_TEXT);
+  pinMode(RECEIVER, INPUT);
 }
 
 void loop()
@@ -44,8 +41,6 @@ void loop()
 
   if(bits[3] == 1 && bits[4] == 1 && bits[5] == 1 && bits[6] == 1)
   {
-    lcd.setCursor(15, 0);
-    lcd.print('@');
     bits[7] = {0};
     carac = '\0';
     delay(500);
@@ -61,24 +56,13 @@ void loop()
       if(carac != '\0')
       {
         lcd.print(carac);
-        Serial.write(carac);
       }
       bits[7] = {0};
       count++;
     }while(carac != '\0');
     count = 0;
-    lcd.setCursor(15, 0);
-    lcd.print('#');
     delay(5000);
-    Serial.println("");
     lcd.clear();
-    lcd.setCursor(0, 1);
-    lcd.print(BOTTOM_TEXT);
-  }
-  else
-  {
-    lcd.setCursor(15, 0);
-    lcd.print(' ');
   }
   delay(500);
 }
