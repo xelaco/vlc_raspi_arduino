@@ -1,5 +1,6 @@
 /* xelaco 2018
  * Visible light communication between a Raspberry Pi and an Arduino
+ * https://github.com/xelaco/vlc_raspi_arduino
  * receiver.ino
  * 
  * ___Requirements for the receiver___
